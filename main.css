@@ -1,0 +1,173 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-image: url(redbg.jpeg);
+}
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+.stats {
+  color: white;
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  height: 80%;
+  border: 1px solid whitesmoke;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  border: 2px solid black;
+  height: 230px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  background-image: url("blackcardbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+.matched {
+  pointer-events: none;
+}
+.heartsdiv {
+  margin-right: 20px;
+  border: 1px solid wheat;
+}
+
+.lost {
+  background-color: darkred;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  z-index: 9999;
+}
+.win {
+  background-color: green;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 60px;
+  border-radius: 12px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  z-index: 9999;
+}
+.card img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+#restart {
+  display: none;
+  padding: 6px 12px;
+  border: none;
+  background: #ff6666;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#restart:hover {
+  background: #ff3333;
+}
+#nxtlvl {
+  display: none;
+  padding: 6px 12px;
+  border: none;
+  background: green;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#nxtlvl:hover {
+  background: lightgreen;
+}
+.level-indicators {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1px;
+  gap: 10px;
+}
+
+.level {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: default;
+}
+.hint-container {
+  margin-bottom: -10px;
+  border: 2px solid black;
+}
+
+#hintbtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: black;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#hintbtn:hover {
+  color: green;
+}
+
+#hintbtn:disabled {
+  background-color: gray;
+  color: aliceblue;
+  cursor: not-allowed;
+}
