@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="game-stats">
+      <div class="level-indicators">
+        <span class="level" id="lvl1" style="background-color: yellow">1</span>
+        <span class="level" id="lvl2">2</span>
+        <span class="level" id="lvl3">3</span>
+      </div>
+      <button id="hintbtn">Hint</button>
+      <p class="stats">
+        Lives: <span id="heart1">💛</span> <span id="heart2">💛</span>
+        <span id="heart3">💛</span><span id="heart4">💛</span>
+      </p>
+      <button id="restart">🔄 Restart</button>
+      <button id="nxtlvl">➡️ Next Level</button>
+      <p class="stats">Time: <span id="timer">30</span>s</p>
+    </div>
+
+    <div class="win" id="win">Level Won!</div>
+    <div id="loose" class="lost">Time is up! you lost</div>
+    <div id="died" class="lost">You died :(</div>
+    <div id="gamewon" class="win">Congrats! You won the game :)</div>
+    <div id="gamestart" class="start">
+      <p>Welcome to the Memory Card Game</p>
+
+      <input type="text" placeholder="Enter Username" id="username" required />
+      <button type="submit" id="startbtn">Start</button>
+    </div>
+
+    <div class="game-board">
+      <p class="card" data-id="banana" data-img="bananas.png">❓</p>
+      <p class="card" data-id="banana" data-img="bananas.png">❓</p>
+      <p class="card" data-id="grape" data-img="grapes.png">❓</p>
+      <p class="card" data-id="grape" data-img="grapes.png">❓</p>
+      <p class="card" data-id="apple" data-img="apple.png">❓</p>
+      <p class="card" data-id="apple" data-img="apple.png">❓</p>
+      <p class="card" data-id="strawberry" data-img="strawberry.png">❓</p>
+      <p class="card" data-id="strawberry" data-img="strawberry.png">❓</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script type="module">
+      // Import core Firebase SDK
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+      // Optional: Analytics (you can keep it or remove)
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDsVGEVbL9aDXaIg1MkrDUwcp3eFfX82Y0",
+        authDomain: "memorycardgame-d3060.firebaseapp.com",
+        projectId: "memorycardgame-d3060",
+        storageBucket: "memorycardgame-d3060.firebasestorage.app",
+        messagingSenderId: "17587023135",
+        appId: "1:17587023135:web:6e71afc5e1761ad2f4d42a",
+        measurementId: "G-8M27MBD6SZ",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app); // ✅ Firestore DB init
+
+      // Optional: Analytics
+      const analytics = getAnalytics(app);
+
+      console.log(
+        "✅ Firebase initialized and Firestore is ready! bababab",
+        db
+      );
+    </script>
+  </body>
+</html>
